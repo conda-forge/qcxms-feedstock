@@ -13,11 +13,11 @@ source:
     - meson.patch  # [osx]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   script:
     - set -ex
-    - meson setup _build ${MESON_ARGS:---prefix=${PREFIX} --libdir=lib} --buildtype=release
+    - meson setup _build ${MESON_ARGS:---prefix=${PREFIX} --libdir=lib} --buildtype=release --wrap-mode=nofallback --pkg-config-path "${PREFIX}/lib/pkgconfig"
     - meson compile -C _build
     - meson test -C _build --no-rebuild --print-errorlogs --suite unit  # [build_platform == target_platform]
     - meson install -C _build --no-rebuild
@@ -39,7 +39,7 @@ requirements:
 
 test:
   commands:
-    - {{ name }}  # [build_platform == target_platform]
+    - {{ name }}
 
 about:
   home: https://github.com/qcxms/qcxms
