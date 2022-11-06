@@ -1,5 +1,5 @@
 {% set name = "qcxms" %}
-{% set version = "5.2.0" %}
+{% set version = "5.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v.{{ version }}.tar.gz
-    sha256: 738549d12e4a20f69df8069dacf3aecdd85eac633896faa23cb72f1ffb8a2bfe
+    sha256: dda5ea49c664dd4f98b5ca8a9862d3d850e63e76da8fec13e24f3ca57619cbf2
     patches:
       - meson.patch  # [osx]
   - url: https://github.com/grimme-lab/rmsd-tool/archive/refs/tags/v0.1.1.tar.gz
