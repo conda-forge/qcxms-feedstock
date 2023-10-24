@@ -33,7 +33,7 @@ requirements:
     - libblas
     - liblapack
     - mctc-lib >=0.3.0
-    - tblite >=0.2.0,<3
+    - tblite >=0.2.0,<0.3
     - toml-f
 
 test:
